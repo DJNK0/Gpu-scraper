@@ -16,6 +16,9 @@ class Scraper():
 
         self.fname = self.today + ".csv"
         self.f = open(self.fname, 'a')
+        
+        self.fname2 = self.yesterday + ".csv"
+        self.f = open(self.fname, "a")
 
         self.names = []
         self.deliverytimes = []
