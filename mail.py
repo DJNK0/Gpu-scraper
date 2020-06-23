@@ -1,3 +1,8 @@
+"""
+This script sends the email with gpus.
+I removed me and my friends email and the bots password
+"""
+
 import email, smtplib, ssl
 from email import encoders
 from email.mime.base import MIMEBase
@@ -10,9 +15,10 @@ class Email:
         #Define emails and passwords
         self.smtp_server = "smtp.gmail.com"
         self.port = 587 
-        self.sender_email = "botsender123@gmail.com"
-        self.password = "botpassword1234"
-        self.receiver_email = "davidkampmeier@gmail.com"
+        self.sender_email = "sender_password"
+        self.password = "sender_password"
+        self.receiver_email_1 = "my_email"
+        self.receiver_email_2 = "friends_email"
 
         #Create and send message
         self.create_msg()
@@ -28,8 +34,8 @@ class Email:
             server.starttls(context=context) 
             server.ehlo() 
             server.login(self.sender_email, self.password)
-            # server.sendmail(self.sender_email, self.receiver_email, str(self.message))
-            # server.sendmail(self.sender_email, "jippepauwels@gmail.com", str(self.message))
+            # server.sendmail(self.sender_email, self.receiver_email_1, str(self.message))
+            # server.sendmail(self.sender_email, self.receiver_email_2, str(self.message))
 
         except Exception as e:
             print(e)
@@ -69,5 +75,3 @@ class Email:
             
         except FileNotFoundError:
             print("File doens't exist")
-
-        
