@@ -9,8 +9,11 @@ import mail
 """
 Program to scrape gpus of a website and notify me if 
 prices dropped with an email.
+
 Script will probably not work anymore if the site gets an 
-update
+update, so it will receive some updates
+
+I scheduled it to run every day using Task Scheduler
 """
 
 class Scraper():
